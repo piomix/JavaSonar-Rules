@@ -17,22 +17,20 @@ import org.sonar.squidbridge.annotations.SqaleSubCharacteristic;
 
 import java.util.List;
 import java.util.regex.Pattern;
-import org.sonar.java.tag.Tag;
 import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
 import org.sonar.plugins.java.api.JavaFileScannerContext;
 import org.sonar.plugins.java.api.tree.MethodTree;
 import org.sonar.plugins.java.api.tree.VariableTree;
 
 @Rule(
-  key = "AV004",
+  key = "AviancaRule",
   name = "Parametro de un metodo de cumplir la notacion Lower Camel Case",
-   description = "El nombre de los parametros debe cumplir notacion Lower Pascal Case",
   priority = Priority.MINOR,
-  tags = {Tag.CONVENTION})
+  tags = {""})
 @ActivatedByDefault
 @SqaleSubCharacteristic(RulesDefinition.SubCharacteristics.READABILITY)
 @SqaleConstantRemediation("2min")
-public class AV004nombradoParametrosMetodoJava extends IssuableSubscriptionVisitor{
+public class AviancaRule extends IssuableSubscriptionVisitor{
 
  //Lower Camel Case: Tomado de http://stackoverflow.com/questions/19021873/upper-and-lower-camel-case
   private static final String DEFAULT_FORMAT = "[a-z]+[A-Z0-9][a-z0-9]+[A-Za-z0-9]*";

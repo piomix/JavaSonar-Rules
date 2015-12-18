@@ -6,6 +6,8 @@ import org.sonar.plugins.java.api.JavaCheck;
 import org.sonar.samples.java.checks.AV001nombradoClasesJava;
 import com.google.common.collect.ImmutableList;
 import org.sonar.samples.java.checks.AV002nombradoMetodosJava;
+import org.sonar.samples.java.checks.AV003nombradoVariablesJava;
+import org.sonar.samples.java.checks.AV004nombradoParametrosMetodoJava;
 
 
 public final class RulesList {
@@ -23,6 +25,8 @@ public final class RulesList {
     return ImmutableList.<Class<? extends JavaCheck>>builder()
       .add(AV001nombradoClasesJava.class)
       .add(AV002nombradoMetodosJava.class)
+      .add(AV003nombradoVariablesJava.class)
+      .add(AV004nombradoParametrosMetodoJava.class)
       .build();
   }
 

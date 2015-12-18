@@ -1,7 +1,7 @@
 
 import org.apache.commons.lang.NotImplementedException;
 
-public class AV01NombradoClasesJava { // Noncompliant {{Renombre el identificador de la clase ya que no cumple la notacion Pascal Case}}
+public class AV001NombradoClasesJava { // Noncompliant {{Renombre el identificador de la clase ya que no cumple la notacion Pascal Case}}
 
     public String intToEnglishValue(int i) {
         if (i == 1) {

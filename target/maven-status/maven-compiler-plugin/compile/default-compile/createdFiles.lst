@@ -1,6 +1,8 @@
 org\sonar\samples\java\checks\AvoidUnmodifiableListRule.class
+org\sonar\samples\java\checks\AV003nombradoVariablesJava.class
 org\sonar\samples\java\checks\MyCustomSubscriptionRule.class
 org\sonar\samples\java\checks\AvoidSuperClassRule.class
+org\sonar\samples\java\checks\AviancaRule.class
 org\sonar\samples\java\checks\AV002nombradoMetodosJava.class
 org\sonar\samples\java\MyJavaRulesCheckRegistrar.class
 org\sonar\samples\java\MyJavaRulesDefinition.class
@@ -9,5 +11,4 @@ org\sonar\samples\java\checks\AvoidMethodDeclarationRule.class
 org\sonar\samples\java\MyJavaRulesPlugin.class
 org\sonar\samples\java\checks\PrinterVisitor.class
 org\sonar\samples\java\RulesList.class
-org\sonar\samples\java\checks\SecurityAnnotationMandatoryRule.class
-org\sonar\samples\java\checks\AvoidAnnotationRule.class
+org\sonar\samples\java\checks\AV004nombradoParametrosMetodoJava.class

@@ -11,6 +11,8 @@ import org.sonar.plugins.java.api.CheckRegistrar;
 import org.sonar.plugins.java.api.JavaCheck;
 import org.sonar.samples.java.checks.AV001nombradoClasesJava;
 import org.sonar.samples.java.checks.AV002nombradoMetodosJava;
+import org.sonar.samples.java.checks.AV003nombradoVariablesJava;
+import org.sonar.samples.java.checks.AV004nombradoParametrosMetodoJava;
 
 
 /**
@@ -36,7 +38,9 @@ public class MyJavaRulesCheckRegistrar implements CheckRegistrar {
   public static Class<? extends JavaCheck>[] checkClasses() {
     return new Class[] {
       AV001nombradoClasesJava.class, 
-      AV002nombradoMetodosJava.class
+      AV002nombradoMetodosJava.class,
+      AV003nombradoVariablesJava.class,
+      AV004nombradoParametrosMetodoJava.class
       };
   }
 

@@ -36,7 +36,7 @@ import java.util.regex.Pattern;
 import org.sonar.squidbridge.annotations.ActivatedByDefault;
 
 @Rule(
-  key = "Av001",
+  key = "AV001",
   name = "Nombrado de clases JAVA",
   description = "Nombre de clase debe cumplir la notacion Pascal Case",
   priority = Priority.MINOR,

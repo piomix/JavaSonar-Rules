@@ -4,16 +4,11 @@
  **/
 class AvoidAnnotationCheck {
 
-  int aField;
-
-  @MyAnnotation
+  int AField; // Noncompliant {{Renombre el identificador de la variable ya que no cumple la notacion Lower Camel Case}}
+  
   public void aMethod() {
-
+     int aCa; //Compliant
+     float NotCompliant; // Noncompliant {{Renombre el identificador de la variable ya que no cumple la notacion Lower Camel Case}}
+            
   }
-
-  @Zuper // Noncompliant {{Avoid using annotation @Zuper}}
-  public void aMethod() {
-
-  }
-
 }

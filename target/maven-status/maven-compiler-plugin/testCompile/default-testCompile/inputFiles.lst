@@ -1,8 +1,8 @@
 D:\ArquitecturaAvianca\Estandares Arquitectura\SonarQube\java-custom-rules\src\test\java\org\sonar\samples\java\checks\AV002nombradoMetodosJavaCheckTest.java
-D:\ArquitecturaAvianca\Estandares Arquitectura\SonarQube\java-custom-rules\src\test\java\org\sonar\samples\java\checks\AvoidAnnotationCheckTest.java
 D:\ArquitecturaAvianca\Estandares Arquitectura\SonarQube\java-custom-rules\src\test\java\org\sonar\samples\java\checks\AvoidSuperClassCheckTest.java
+D:\ArquitecturaAvianca\Estandares Arquitectura\SonarQube\java-custom-rules\src\test\java\org\sonar\samples\java\checks\AV003nombradoVariablesJavaCheckTest.java
+D:\ArquitecturaAvianca\Estandares Arquitectura\SonarQube\java-custom-rules\src\test\java\org\sonar\samples\java\checks\AV004nombradoParametrosMetodoCheckTest.java
 D:\ArquitecturaAvianca\Estandares Arquitectura\SonarQube\java-custom-rules\src\test\java\org\sonar\samples\java\checks\MyCustomSubscriptionRuleTest.java
 D:\ArquitecturaAvianca\Estandares Arquitectura\SonarQube\java-custom-rules\src\test\java\org\sonar\samples\java\checks\AvoidUnmodifiableListTest.java
-D:\ArquitecturaAvianca\Estandares Arquitectura\SonarQube\java-custom-rules\src\test\java\org\sonar\samples\java\checks\SecurityAnnotationMandatoryCheckTest.java
 D:\ArquitecturaAvianca\Estandares Arquitectura\SonarQube\java-custom-rules\src\test\java\org\sonar\samples\java\checks\AvoidMethodDeclarationCheckTest.java
 D:\ArquitecturaAvianca\Estandares Arquitectura\SonarQube\java-custom-rules\src\test\java\org\sonar\samples\java\checks\AV001nombradoClasesJavaCheckTest.java

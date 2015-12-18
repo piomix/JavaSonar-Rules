@@ -13,9 +13,9 @@ import org.sonar.plugins.java.api.tree.Tree;
 import org.sonar.squidbridge.annotations.SqaleConstantRemediation;
 import org.sonar.squidbridge.annotations.SqaleSubCharacteristic;
 
-@Rule(key = "Av002",
-  name = "Nombre de los metodos cumple la notación Camel Case",
-  description = "Nombre de los metodos cumple la notación Camel Case",
+@Rule(key = "AV002",
+  name = "Nombre del metodo cumple la notación Camel Case",
+  description = "Nombre del metodo cumple la notación Camel Case",
   priority = Priority.MINOR,
   tags = {Tag.CONVENTION}
   )
