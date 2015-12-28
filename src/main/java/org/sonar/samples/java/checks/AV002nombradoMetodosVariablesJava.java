@@ -21,7 +21,7 @@ import org.sonar.squidbridge.annotations.SqaleSubCharacteristic;
   )
 @SqaleSubCharacteristic(RulesDefinition.SubCharacteristics.READABILITY)
 @SqaleConstantRemediation("10min")
-public class AV002nombradoMetodosJava extends BaseTreeVisitor implements JavaFileScanner {
+public class AV002nombradoMetodosVariablesJava extends BaseTreeVisitor implements JavaFileScanner {
 
   private JavaFileScannerContext context;
 
@@ -55,7 +55,9 @@ public class AV002nombradoMetodosJava extends BaseTreeVisitor implements JavaFil
   @Override
   public void visitMethod(MethodTree tree) {
     // Si el nombre del mètodo no es vacio
-    if (tree.is(Tree.Kind.METHOD) &&  tree.simpleName().name() != null) {
+    // System.out.println("HAB: Metodo: " + tree.simpleName().name());
+    // System.out.println("HAB: main? " + (tree.simpleName().name().equals("main")));
+    if (tree.is(Tree.Kind.METHOD) &&  tree.simpleName().name() != null && !(tree.simpleName().name().equals("main"))) {
         // Adds an issue by attaching it with the tree and the rule 
         if (!pattern.matcher(tree.simpleName().name()).matches()) {
             context.addIssue(tree, this, "Renombre el identificador del metodo ya que no cumple la notacion Pascal Case");

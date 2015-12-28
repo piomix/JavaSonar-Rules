@@ -26,7 +26,7 @@ import org.sonar.plugins.java.api.tree.VariableTree;
 @Rule(
   key = "AV004",
   name = "Parametro de un metodo de cumplir la notacion Lower Camel Case",
-   description = "El nombre de los parametros debe cumplir notacion Lower Pascal Case",
+  description = "El nombre de los parametros debe cumplir notacion Lower Pascal Case",
   priority = Priority.MINOR,
   tags = {Tag.CONVENTION})
 @ActivatedByDefault

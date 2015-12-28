@@ -5,9 +5,11 @@ import java.util.List;
 import org.sonar.plugins.java.api.JavaCheck;
 import org.sonar.samples.java.checks.AV001nombradoClasesJava;
 import com.google.common.collect.ImmutableList;
-import org.sonar.samples.java.checks.AV002nombradoMetodosJava;
+import org.sonar.samples.java.checks.AV002nombradoMetodosVariablesJava;
 import org.sonar.samples.java.checks.AV003nombradoVariablesJava;
 import org.sonar.samples.java.checks.AV004nombradoParametrosMetodoJava;
+import org.sonar.samples.java.checks.AV005nombradoInterfacesJava;
+import org.sonar.samples.java.checks.AV006nombradoVariableMiembroJava;
 
 
 public final class RulesList {
@@ -24,9 +26,11 @@ public final class RulesList {
   public static List<Class<? extends JavaCheck>> getJavaChecks() {
     return ImmutableList.<Class<? extends JavaCheck>>builder()
       .add(AV001nombradoClasesJava.class)
-      .add(AV002nombradoMetodosJava.class)
+      .add(AV002nombradoMetodosVariablesJava.class)
       .add(AV003nombradoVariablesJava.class)
       .add(AV004nombradoParametrosMetodoJava.class)
+      .add(AV005nombradoInterfacesJava.class)
+      .add(AV006nombradoVariableMiembroJava.class)
       .build();
   }
 

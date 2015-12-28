@@ -1,23 +1,40 @@
+/*
+ * SonarQube Java
+ * Copyright (C) 2012-2016 SonarSource SA
+ * mailto:contact AT sonarsource DOT com
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
 package org.sonar.samples.java.checks;
-
-import java.util.List;
-import java.util.regex.Pattern;
 
 import org.sonar.api.server.rule.RulesDefinition;
 import org.sonar.check.Priority;
 import org.sonar.check.Rule;
-import org.sonar.check.RuleProperty;
 import org.sonar.java.tag.Tag;
 import org.sonar.plugins.java.api.JavaFileScanner;
 import org.sonar.plugins.java.api.JavaFileScannerContext;
-import org.sonar.plugins.java.api.tree.AnnotationTree;
 import org.sonar.plugins.java.api.tree.BaseTreeVisitor;
-import org.sonar.plugins.java.api.tree.IdentifierTree;
-import org.sonar.plugins.java.api.tree.MethodTree;
+import org.sonar.plugins.java.api.tree.ClassTree;
+import org.sonar.plugins.java.api.tree.ForEachStatement;
+import org.sonar.plugins.java.api.tree.ForStatementTree;
 import org.sonar.plugins.java.api.tree.Tree;
 import org.sonar.plugins.java.api.tree.VariableTree;
 import org.sonar.squidbridge.annotations.SqaleConstantRemediation;
 import org.sonar.squidbridge.annotations.SqaleSubCharacteristic;
+
+import java.util.regex.Pattern;
 
 @Rule(key = "AV003",
   name = "Nombre de variables con notacion Lower Camel Case",
@@ -26,44 +43,56 @@ import org.sonar.squidbridge.annotations.SqaleSubCharacteristic;
   tags = {Tag.CONVENTION})
 @SqaleSubCharacteristic(RulesDefinition.SubCharacteristics.READABILITY)
 @SqaleConstantRemediation("10min")
-public class AV003nombradoVariablesJava extends BaseTreeVisitor implements JavaFileScanner {
-
-  private static final String DEFAULT_VALUE = "Inject";
-
-  private JavaFileScannerContext context;
+public class AV003nombradoVariablesJava  extends BaseTreeVisitor implements JavaFileScanner {
 
   //Lower Camel Case: Tomado de http://stackoverflow.com/questions/19021873/upper-and-lower-camel-case
   private static final String DEFAULT_FORMAT = "[a-z]+[A-Z0-9][a-z0-9]+[A-Za-z0-9]*";
-  
+
   public String format = DEFAULT_FORMAT;
+
   private Pattern pattern = null;
+  private JavaFileScannerContext context;
 
   @Override
   public void scanFile(JavaFileScannerContext context) {
     if (pattern == null) {
-      pattern = Pattern.compile(format);
+      pattern = Pattern.compile(format, Pattern.DOTALL);
     }
     this.context = context;
-
-    scan(context.getTree());
-
+    // For debugging purpose, you can print out the entire AST of the analyzed file
     System.out.println(PrinterVisitor.print(context.getTree()));
+    scan(context.getTree());
+  }
+
+  @Override
+  public void visitClass(ClassTree tree) {
+    for (Tree member : tree.members()) {
+      //if (member.is(Tree.Kind.VARIABLE)) {
+        // skip check of field
+      //  scan(((VariableTree) member).initializer());
+      //} else {
+        scan(member);
+      //}
+    }
+  }
+
+  @Override
+  public void visitForStatement(ForStatementTree tree) {
+    scan(tree.statement());
+    
+  }
+
+  @Override
+  public void visitForEachStatement(ForEachStatement tree) {
+    scan(tree.statement());
   }
 
   @Override
   public void visitVariable(VariableTree tree) {
-    System.out.println("HAB: Antes de validar...");
-    // Si el nombre de la variable no es vacio
-    if (tree.is(Tree.Kind.VARIABLE) &&  tree.simpleName().name() != null){ 
-     // Adds an issue by attaching it with the tree and the rule 
-     if (!pattern.matcher(tree.simpleName().name()).matches()) {
-        System.out.println("HAB: No cumpli...");
-        context.addIssue(tree, this, "Renombre el identificador de la variable ya que no cumple la notacion Lower Camel Case");
-      } 
-     }
-    
-    // The call to the super implementation allows to continue the visit of the AST.
-    // Be careful to always call this method to visit every node of the tree.
+    if (!pattern.matcher(tree.simpleName().name()).matches()) {
+      context.addIssue(tree, this, "Renombre el identificador del parametro o variable ya que no cumple la notacion Lower Camel Case");
+    }
     super.visitVariable(tree);
   }
+
 }

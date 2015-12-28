@@ -4,11 +4,11 @@
  **/
 class AvoidAnnotationCheck {
 
-  int AField; // Noncompliant {{Renombre el identificador de la variable ya que no cumple la notacion Lower Camel Case}}
+  int UnCampo =0; // Noncompliant {{Renombre el identificador del parametro o variable ya que no cumple la notacion Lower Camel Case}}
   
-  public void aMethod() {
+  public void aMethod(int aBc, int ABC) { // Noncompliant {{Renombre el identificador del parametro o variable ya que no cumple la notacion Lower Camel Case}}
      int aCa; //Compliant
-     float NotCompliant; // Noncompliant {{Renombre el identificador de la variable ya que no cumple la notacion Lower Camel Case}}
-            
+     float NotCompliant; // Noncompliant {{Renombre el identificador del parametro o variable ya que no cumple la notacion Lower Camel Case}}
+     for (int iOi=0; iOi != 1; iOi ++) aCa =0;
   }
 }

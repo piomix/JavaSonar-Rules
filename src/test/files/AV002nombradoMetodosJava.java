@@ -31,5 +31,9 @@ public class AV01NombradoClasesJava {
 	public void miMetodo001(int a, int b){ // Noncompliant {{Renombre el identificador del metodo ya que no cumple la notacion Pascal Case}}
 		
 	}
+        
+        public static void main(){ //Cumple
+         return;
+        }
 
 }
