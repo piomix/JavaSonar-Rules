@@ -84,7 +84,7 @@ public class AV001nombradoClasesJava extends BaseTreeVisitor implements JavaFile
           context.addIssue(tree, this, "Renombre el identificador de la clase ya que no cumple la notacion Pascal Case");
       }
       else // For debugging purpose, you can print out the entire AST of the analyzed file
-          System.out.println("Match con patrón definido para la clase: " + tree.simpleName().name());
+          System.out.println("Match con patron definido para la clase: " + tree.simpleName().name());
     }
     super.visitClass(tree);
   }

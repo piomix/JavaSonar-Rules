@@ -7,6 +7,8 @@ package company.demo;
 class BusinessClassDelegate {
 
   int aField;
+  
+  public static void main(){}
 
   public void aMethod() {
 

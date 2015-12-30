@@ -1,8 +1,10 @@
 org\sonar\samples\java\checks\AV003nombradoVariablesJavaCheckTest.class
+org\sonar\samples\java\checks\AV005nombradoInterfacesJavaCheckTest.class
+org\sonar\samples\java\checks\AV007nombradoVariableBooleanCheckTest.class
 org\sonar\samples\java\checks\AV001nombradoClasesJavaCheckTest.class
-org\sonar\samples\java\checks\MyCustomSubscriptionRuleTest.class
 org\sonar\samples\java\checks\AvoidMethodDeclarationCheckTest.class
-org\sonar\samples\java\checks\AvoidSuperClassCheckTest.class
+org\sonar\samples\java\checks\AV008nombradoImportJavaCheckTest.class
+org\sonar\samples\java\checks\AV009indetancionLlavesJavaCheckTest.class
+org\sonar\samples\java\checks\AV006nombradoVariableMiembroJavaCkeckTest.class
 org\sonar\samples\java\checks\AV002nombradoMetodosJavaCheckTest.class
 org\sonar\samples\java\checks\AV004nombradoParametrosMetodoCheckTest.class
-org\sonar\samples\java\checks\AvoidUnmodifiableListTest.class

@@ -54,9 +54,12 @@ public class AV004nombradoParametrosMetodoJava extends IssuableSubscriptionVisit
   @Override
   public void visitNode(Tree tree) {
 	MethodTree methodTree = (MethodTree) tree;
-    for (VariableTree var : methodTree.parameters()) {
+        //System.out.println("HAB: main? " + "main".equals(methodTree.simpleName().name()) );
+       if(!"main".equals(methodTree.simpleName().name())){
+        for (VariableTree var : methodTree.parameters()) {
 		if(!pattern.matcher(var.simpleName().toString()).matches())
 		addIssue(tree, "Parametro no cumple notacion Lower Camel Case");
-    }
+        }
+       }
   }
 }

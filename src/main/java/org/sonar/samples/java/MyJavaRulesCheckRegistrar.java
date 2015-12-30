@@ -15,6 +15,9 @@ import org.sonar.samples.java.checks.AV003nombradoVariablesJava;
 import org.sonar.samples.java.checks.AV004nombradoParametrosMetodoJava;
 import org.sonar.samples.java.checks.AV005nombradoInterfacesJava;
 import org.sonar.samples.java.checks.AV006nombradoVariableMiembroJava;
+import org.sonar.samples.java.checks.AV007nombradoVariableBoolJava;
+import org.sonar.samples.java.checks.AV008nombradoImportJava;
+import org.sonar.samples.java.checks.AV009indentacionLlaveAbreJava;
 
 
 /**
@@ -45,6 +48,9 @@ public class MyJavaRulesCheckRegistrar implements CheckRegistrar {
       AV004nombradoParametrosMetodoJava.class,
       AV005nombradoInterfacesJava.class,
       AV006nombradoVariableMiembroJava.class,
+      AV007nombradoVariableBoolJava.class,
+      AV008nombradoImportJava.class,
+      AV009indentacionLlaveAbreJava.class
       };
   }
 

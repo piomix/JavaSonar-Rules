@@ -14,8 +14,8 @@ import org.sonar.squidbridge.annotations.SqaleConstantRemediation;
 import org.sonar.squidbridge.annotations.SqaleSubCharacteristic;
 
 @Rule(key = "AV002",
-  name = "Nombre del metodo cumple la notación Camel Case",
-  description = "Nombre del metodo cumple la notación Camel Case",
+  name = "Nombre del metodo cumple la notacion Camel Case",
+  description = "Nombre del metodo cumple la notacion Camel Case",
   priority = Priority.MINOR,
   tags = {Tag.CONVENTION}
   )
@@ -54,9 +54,9 @@ public class AV002nombradoMetodosVariablesJava extends BaseTreeVisitor implement
    */
   @Override
   public void visitMethod(MethodTree tree) {
-    // Si el nombre del mètodo no es vacio
+    // Si el nombre del metodo no es vacio
     // System.out.println("HAB: Metodo: " + tree.simpleName().name());
-    // System.out.println("HAB: main? " + (tree.simpleName().name().equals("main")));
+     System.out.println("HAB: main? " + (tree.simpleName().name().equals("main")));
     if (tree.is(Tree.Kind.METHOD) &&  tree.simpleName().name() != null && !(tree.simpleName().name().equals("main"))) {
         // Adds an issue by attaching it with the tree and the rule 
         if (!pattern.matcher(tree.simpleName().name()).matches()) {

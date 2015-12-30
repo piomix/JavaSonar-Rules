@@ -10,6 +10,10 @@ import org.sonar.samples.java.checks.AV003nombradoVariablesJava;
 import org.sonar.samples.java.checks.AV004nombradoParametrosMetodoJava;
 import org.sonar.samples.java.checks.AV005nombradoInterfacesJava;
 import org.sonar.samples.java.checks.AV006nombradoVariableMiembroJava;
+import org.sonar.samples.java.checks.AV007nombradoVariableBoolJava;
+import org.sonar.samples.java.checks.AV008nombradoImportJava;
+import org.sonar.samples.java.checks.AV009indentacionLlaveAbreJava;
+
 
 
 public final class RulesList {
@@ -31,6 +35,9 @@ public final class RulesList {
       .add(AV004nombradoParametrosMetodoJava.class)
       .add(AV005nombradoInterfacesJava.class)
       .add(AV006nombradoVariableMiembroJava.class)
+      .add(AV007nombradoVariableBoolJava.class)
+      .add(AV008nombradoImportJava.class)
+      .add(AV009indentacionLlaveAbreJava.class)
       .build();
   }
 
